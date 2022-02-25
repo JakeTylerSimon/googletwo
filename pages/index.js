@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { Avatar } from '../components/Avatar'
+import {MicrophoneIcon, ViewGridIcon} from '@heroicons/react/solid'
 
 export default function Home() {
   return (
@@ -9,7 +11,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Lets build google with next.js and tailwind</h1>
+      <header className='flex w-full p-5 justify-between text-sm text-gray-700'>
+
+        {/* Left Section */}
+        <div className='flex space-x-4 items-center'>
+          <p className='link'>About</p>
+          <p className='link'>Store</p>
+        </div>
+
+        {/* Right Section */}
+        <div className='flex space-x-4 items-center'>
+          <p className='link'>Gmail</p>
+          <p className='link'>Images</p>
+
+          <ViewGridIcon className='h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer' />
+          <Avatar url='https://media-exp1.licdn.com/dms/image/C5603AQEwZVSJVRq2oA/profile-displayphoto-shrink_200_200/0/1554414119975?e=1651104000&v=beta&t=6A-dTuao6xYOaHaNn3gOLTnVx4gnPaCEX8r0cVeBFFs'/>
+        </div>
+
+      </header>
       
     </div>
   )
