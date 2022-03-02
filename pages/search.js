@@ -13,7 +13,7 @@ const Search = ({results}) => {
 
   return (
     <div>
-        {/* chages the title in head */}
+        {/* changes the title in head */}
         <Head>
             <title>{router.query.term} - Google Search</title>
         </Head>
@@ -30,8 +30,8 @@ export default Search;
 
 //calling the google api for searching the web
 export async function getServerSideProps(context) {
-    const useDummyData = true;
-    const startIndex = context.query.start || '0';
+    const useDummyData = false;
+    const startIndex = context.query.start || "0";
 
     const data = useDummyData ? Response : await fetch(
         `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${context.query.term}&start=${startIndex}`
@@ -39,7 +39,7 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
-            results: data
-        }
-    }
+            results: data,
+        },
+    };
 }
